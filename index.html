@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN" id="htmlRoot">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>邮件回复决策助手 · GOFO 电邮服务组</title>
+
+  <!-- Favicon：使用 📧 emoji 作为 SVG 图标 -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📧</text></svg>" />
+
+  <!-- 样式表 -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- ========== 页头 ========== -->
+    <header>
+      <div class="header-row">
+        <h1>📧 邮件回复决策助手</h1>
+        <button class="lang-switch" id="langSwitch" title="Switch Language / Cambia Lingua">
+          <span class="lang-label" id="langLabel">中文</span>
+        </button>
+      </div>
+      <p>GOFO 电邮服务组 · 依据《邮件回复操作流程 SOP》+《进线分类表》生成判断建议</p>
+    </header>
+
+    <!-- ========== 场景优先级 ========== -->
+    <div class="prio">
+      <span>场景优先级：<b>安全类</b> &gt; 服务类 &gt; 时效类 &gt; 需求类 &gt; 其他类</span>
+    </div>
+
+    <!-- ========== 使用提示 ========== -->
+    <div class="hint">
+      💡 <b>用法</b>：先在 Udesk 打开邮件、在 CPS 查好运单轨迹，再按顺序回答问题。每一步选完自动推进，
+      右下角会实时给出「回复话术 / 登记类别 / 是否上报 / 是否升级」。本工具只做辅助判断，<b style="color:#E73F1E;">具体情形仍须具体分析</b>。
+    </div>
+
+    <!-- ========== 面包屑（动态更新） ========== -->
+    <div class="breadcrumb" id="breadcrumb"></div>
+
+    <!-- ========== 主舞台（问题 / 结果卡片动态渲染到此） ========== -->
+    <div id="stage"></div>
+
+    <!-- ========== 页脚 ========== -->
+    <footer>Created by <a href="https://github.com/MarvelousWendy" target="_blank" rel="noopener">Wendy</a>🧑🏼‍💻</footer>
+  </div>
+
+  <!-- ========== 脚本（加载顺序：数据 -> 逻辑） ========== -->
+  <script src="js/data.js"></script>
+  <script src="js/data-it.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
