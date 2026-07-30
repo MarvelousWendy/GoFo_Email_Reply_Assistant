@@ -1,5 +1,5 @@
 /* ============================================================
-   邮件回复决策助手 · GOFO 电邮服务组
+   邮件回复决策助手 · GOFO 客户服务部
    决策树数据  data.js
    ============================================================
    本文件定义整个决策树的所有节点。每个节点分为两类：
@@ -219,10 +219,10 @@ window.NODES_ZH = {
     title: '破损情况？（先确认收件人是否已收到）',
     grid: '2x2',
     opts: [
-      { label: '收件人未收到，工作台显示破损',                next: 'R_dmg_nr',    urgency: 'warn' },
-      { label: '已收到：外包装破损、内物也破损/少件',         next: 'q_dmg_op',    urgency: 'danger' },
-      { label: '已收到：外包装完好、内物破损',                next: 'q_dmg_ip',    urgency: 'warn' },
-      { label: '已收到：外包装破损、内物完好',                next: 'R_dmg_ook',   urgency: 'ok' }
+      { label: '客户未签收，工作台显示破损',                next: 'R_dmg_nr',    urgency: 'warn' },
+      { label: '已签收：外包装破损、内物也破损/少件',         next: 'q_dmg_op',    urgency: 'danger' },
+      { label: '已签收：外包装完好、内物破损',                next: 'q_dmg_ip',    urgency: 'warn' },
+      { label: '已签收：外包装破损、内物完好',                next: 'R_dmg_ook',   urgency: 'ok' }
     ]
   },
 
@@ -595,7 +595,7 @@ window.NODES_ZH = {
     report: '无需上报',
     esc:    '',
     evidence: '以工作台破损判定为据，确认退回客户',
-    note:   '收件人未收到，工作台显示破损件 → 确认退回客户。',
+    note:   '客户未签收，工作台显示破损件 → 确认退回客户。',
     ref:    'SOP 2.4 / 分类表·安全类-破损类'
   },
 

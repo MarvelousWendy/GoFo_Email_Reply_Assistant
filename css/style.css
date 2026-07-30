@@ -4,6 +4,18 @@
    ============================================================ */
 
 /* --------------------------------------------------
+   0. Web 字体
+   -------------------------------------------------- */
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('../static/Nunito-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --------------------------------------------------
    1. CSS 变量定义
    -------------------------------------------------- */
 
@@ -679,7 +691,9 @@ footer {
   margin-top: 30px;
   padding-top: 12px;
   border-top: 1px solid var(--line);
-  font-size: 0.68rem;
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
   color: var(--footer-txt);
   text-align: center;
   line-height: 1.5;

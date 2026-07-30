@@ -41,13 +41,13 @@ window.NODES_IT = {
     ]
   },
 
-  /* =================== VERIFICA TRACKING =================== */
+  /* =================== VERIFICA TRACKING NUMERO =================== */
   q_track: {
     t: 'q',
     tag: 'Passo 2',
-    title: 'Sì puo estrarre un tracking valido dall\'email?',
+    title: 'Sì puo estrarre un tracking numero valido dall\'email?',
     opts: [
-      { label: 'Nessun tracking / Errato', next: 'R_notrack' },
+      { label: 'Nessun tracking numero / Errato', next: 'R_notrack' },
       { label: 'Sì, corretto', next: 'q_link' }
     ]
   },
@@ -219,10 +219,10 @@ window.NODES_IT = {
     title: 'Tipo danno? (verificare se ricevuto)',
     grid: '2x2',
     opts: [
-      { label: 'Non ricevuto, danno in piattaforma',                next: 'R_dmg_nr',    urgency: 'warn' },
-      { label: 'Ricevuto: imballo e contenuto KO',         next: 'q_dmg_op',    urgency: 'danger' },
-      { label: 'Ricevuto: imballo OK, contenuto KO',                next: 'q_dmg_ip',    urgency: 'warn' },
-      { label: 'Ricevuto: imballo KO, contenuto OK',                next: 'R_dmg_ook',   urgency: 'ok' }
+      { label: 'Il cliente non ha firmato e il pacco risultava danneggiato.',                next: 'R_dmg_nr',    urgency: 'warn' },
+      { label: 'Firma ricevuta: pacco danneggiato, contenuto danneggiato/mancante.',         next: 'q_dmg_op',    urgency: 'danger' },
+      { label: 'Firma ricevuta: imballo integro, contenuto danneggiato/mancante.',                next: 'q_dmg_ip',    urgency: 'warn' },
+      { label: 'Firma ricevuta: imballo danneggiato, contenuto integro.',                next: 'R_dmg_ook',   urgency: 'ok' }
     ]
   },
 
@@ -346,8 +346,8 @@ window.NODES_IT = {
 
   R_notrack: {
     t: 'r',
-    script: 'No Tracking/Errato',
-    cat:    ['Altro', 'No Tracking/Errato', ''],
+    script: 'No Tracking Numero/Errato',
+    cat:    ['Altro', 'No Tracking Numero/Errato', ''],
     report: 'Non segnalare',
     esc:    '',
     note:   'Guida verifica tracking, assisti nuovo controllo.',
@@ -416,7 +416,7 @@ window.NODES_IT = {
 
   R_stall714: {
     t: 'r',
-    script: '轨迹Tracking Fermo 7-14 giorni —— Rassicurazione',
+    script: 'Tracking fermo 7-14 giorni — Rassicurazione',
     cat:    ['Tempistiche', 'Sollecito', 'Sollecito'],
     report: 'Non segnalare · Invia sollecito',
     esc:    '',
@@ -426,7 +426,7 @@ window.NODES_IT = {
 
   R_stall14: {
     t: 'r',
-    script: '轨迹Tracking Fermo Oltre 14 giorni —— Sospetto Smarrimento，contattare venditore',
+    script: 'Tracking fermo >14 giorni — Sospetto smarrimento, contattare venditore',
     cat:    ['Tempistiche', 'Sollecito', 'Sollecito/Smarr.'],
     report: 'Non segnalare · Invia sollecito',
     esc:    '',
@@ -477,11 +477,11 @@ window.NODES_IT = {
 
   R_pody1: {
     t: 'r',
-    script: 'Consegnato Non Ricevuto1o contatto（发 POD）+ POD foto',
+    script: 'Consegnato non ricevuto, 1o contatto (invia POD) + foto POD',
     cat:    ['Sicurezza', 'Smarrimento', 'Consegnato NR (POD OK)'],
     report: 'Non segnalare',
     esc:    '',
-    attach: 'POD 签收foto',
+    attach: 'Foto POD',
     note:   'POD OK -> controlla cassette/vicini/portiere.',
     ref:    'SOP 2.2 Caso 1 / Class. Sicurezza - Non Ricevuto (POD OK)'
   },
@@ -498,7 +498,7 @@ window.NODES_IT = {
 
   R_podyM: {
     t: 'r',
-    script: 'Consegnato Non Ricevutocontrolla telecamere 或 POD ConformeContatti multipli',
+    script: 'Consegnato non ricevuto, controllare telecamere o POD conforme, contatti multipli',
     cat:    ['Sicurezza', 'Smarrimento', 'Consegnato Non Ricevuto'],
     report: 'Non segnalare',
     esc:    '',
@@ -539,7 +539,7 @@ window.NODES_IT = {
 
   R_podnM_pend: {
     t: 'r',
-    script: '调查无果Contatti multipli',
+    script: 'Contatti multipli senza esito',
     cat:    ['Sicurezza', 'Smarrimento', 'Consegnato NR (Perso)'],
     report: 'Segnala: sospetta falsa firma (gia inviata)',
     esc:    '',
@@ -549,7 +549,7 @@ window.NODES_IT = {
 
   R_podnM_conf: {
     t: 'r',
-    script: '虚假签收（Risarcimento）+ RisarcimentoPDF risarcimento',
+    script: 'Falsa firma (risarcimento) + PDF risarcimento',
     cat:    ['Sicurezza', 'Smarrimento', 'Consegnato Non Ricevuto'],
     report: 'Segnala: sospetta falsa firma (confermata)',
     esc:    '',
@@ -580,7 +580,7 @@ window.NODES_IT = {
 
   R_mod_addr_bad: {
     t: 'r',
-    script: '向收人核实收货地址',
+    script: 'Verificare indirizzo di consegna con il destinatario',
     cat:    ['Richieste', 'Modifica Richiesta', 'Modifica Dati'],
     report: 'Non segnalare',
     esc:    '',
@@ -590,67 +590,67 @@ window.NODES_IT = {
 
   R_dmg_nr: {
     t: 'r',
-    script: '商品DANNI（工作台DANNI确认退回客户）',
+    script: 'Pacco danneggiato (reso al cliente confermato in piattaforma)',
     cat:    ['Sicurezza', 'Danni', 'Non Ricev.-Danno'],
     report: 'Non segnalare',
     esc:    '',
-    evidence: 'Basato su danno piattaforma, conferma reso.',
-    note:   'Non ricevuto, danno -> conferma reso.',
+    evidence: 'Basato su valutazione danno in piattaforma, confermare reso al cliente.',
+    note:   'Non ricevuto, danno in piattaforma → Confermare reso al cliente.',
     ref:    'SOP 2.4 / Class. Sicurezza - Danni'
   },
 
   R_dmg_ook: {
     t: 'r',
-    script: '客户收到包裹（感谢+scuse）',
+    script: 'Cliente ha ricevuto il pacco (ringraziamento + scuse)',
     cat:    ['Sicurezza', 'Danni', 'Imballo KO Cont. OK'],
     report: 'Non segnalare',
     esc:    '',
-    evidence: 'Solo imballo KO, contenuto OK.',
-    note:   'Imballo KO, contenuto OK -> rassicura cliente.',
+    evidence: 'Solo imballaggio danneggiato, contenuto integro. Rassicurare il cliente.',
+    note:   'Imballaggio danneggiato, contenuto integro → Rassicurare il cliente: il prodotto e funzionante.',
     ref:    'SOP 2.4 / Class. Sicurezza - Danno Imballo (Cont. OK)'
   },
 
   R_dmg_op_y: {
     t: 'r',
-    script: 'Indagine in corso, attendere + 联系 DSP 主动处Risarcimento偿',
+    script: 'Indagine in corso, attendere + Contattare il DSP per avviare la pratica di risarcimento',
     cat:    ['Sicurezza', 'Danni', 'Imballo KO Cont. KO'],
     report: 'Segnala: pacco danneggiato (POD OK)',
     esc:    '',
-    evidence: 'Foto POD = prova danno.',
-    note:   'Danno visibile POD -> contatta DSP.',
+    evidence: 'La foto POD mostra il danno, utilizzabile come prova.',
+    note:   'Danno visibile nella foto POD → Contattare il DSP per il risarcimento.',
     ref:    'SOP 2.4 / Class. Sicurezza - Danno Visibile POD'
   },
 
   R_dmg_op_n: {
     t: 'r',
-    script: 'Indagine in corso, attendere + 引导提供监控视频',
+    script: 'Indagine in corso, attendere + Richiedere video di sorveglianza',
     cat:    ['Sicurezza', 'Danni', 'Imballo KO Cont. KO'],
     report: 'Non segnalare',
     esc:    '',
-    evidence: 'POD non mostra danno, richiedi video/foto.',
-    note:   'Danno non visibile -> rassicura + richiedi video.',
+    evidence: 'La foto POD non mostra segni visibili di danno. Richiedere video/foto di sorveglianza.',
+    note:   'Danno non visibile nella foto POD → Rassicurare e richiedere video di sorveglianza.',
     ref:    'SOP 2.4 / Class. Sicurezza - Danno Non Visibile POD'
   },
 
   R_dmg_ip_y: {
     t: 'r',
-    script: 'Indagine in corso, attendere + 联系 DSP 主动处Risarcimento偿',
+    script: 'Indagine in corso, attendere + Contattare il DSP per avviare la pratica di risarcimento',
     cat:    ['Sicurezza', 'Danni', 'Imballo OK Cont. KO'],
     report: 'Segnala: pacco danneggiato (POD OK)',
     esc:    '',
-    evidence: 'POD foto可作为DANNI证据，联系 DSP 处理Risarcimento',
-    note:   '用户声称为外包装完好、内物DANNI，POD 有DANNI → 联系 DSP 主动处理Risarcimento。',
+    evidence: 'La foto POD mostra il danno. Contattare il DSP per il risarcimento.',
+    note:   'Imballaggio integro ma contenuto danneggiato, POD mostra danno → Contattare il DSP per il risarcimento.',
     ref:    'SOP 2.4 / Class. Sicurezza - Danno Interno (POD OK)'
   },
 
   R_dmg_ip_n: {
     t: 'r',
-    script: '商品DANNI（送达后发现）',
+    script: 'Prodotto danneggiato (scoperto dopo la consegna)',
     cat:    ['Sicurezza', 'Danni', 'Imballo OK Cont. KO'],
     report: 'Non segnalare',
     esc:    '',
-    evidence: 'POD senza danni, contatta mittente.',
-    note:   'Imballo OK, contenuto KO -> contatta mittente.',
+    evidence: 'POD senza danni, responsabilita logistica non determinabile. Contattare il mittente.',
+    note:   'Imballaggio integro, contenuto danneggiato → Invitare il destinatario a contattare il mittente.',
     ref:    'SOP 2.4 / Class. Sicurezza - Danno Interno (POD KO)'
   },
 
@@ -676,7 +676,7 @@ window.NODES_IT = {
 
   R_wm_m_yes: {
     t: 'r',
-    script: '包裹内不符/CONTENUTO MANCANTE',
+    script: 'Contenuto pacco non conforme/mancante',
     cat:    ['Sicurezza', 'Smarrimento', 'Imballo OK Cont. Mancante'],
     report: 'Non segnalare',
     esc:    '',
@@ -686,7 +686,7 @@ window.NODES_IT = {
 
   R_wm_m_no: {
     t: 'r',
-    script: '需复核：外好内少但 POD Non corrispondono',
+    script: 'Verifica: imballo OK, contenuto mancante, POD non corrisponde',
     cat:    ['Sicurezza', 'Smarrimento', 'Imballo OK Cont. Mancante'],
     report: 'Segnala verifica (POD KO)',
     esc:    '',
@@ -706,7 +706,7 @@ window.NODES_IT = {
 
   R_th_n1: {
     t: 'r',
-    script: '真诚scuse',
+    script: 'Scuse sincere',
     cat:    ['Altro', 'Comunicazione (Email)', ''],
     report: 'Non segnalare',
     esc:    '',
@@ -726,7 +726,7 @@ window.NODES_IT = {
 
   R_th_r1: {
     t: 'r',
-    script: '客户收到包裹（感谢+scuse）',
+    script: 'Cliente ha ricevuto il pacco (ringraziamento + scuse)',
     cat:    ['Altro', 'Comunicazione (Email)', ''],
     report: 'Non segnalare',
     esc:    '',
@@ -776,7 +776,7 @@ window.NODES_IT = {
 
   R_srv_v_dmg: {
     t: 'r',
-    script: '按DANNI流程处理',
+    script: 'Procedere con la procedura danni',
     cat:    ['Servizio', 'Reclamo Corriere', 'Consegna Violenta'],
     report: 'Segnala: qualita servizio (danno merce)',
     esc:    '',
@@ -796,7 +796,7 @@ window.NODES_IT = {
 
   R_srv_pod: {
     t: 'r',
-    script: 'Rassicura e scusa → 数据勘误，删除 POD foto',
+    script: 'Rassicurare e scusarsi → Correzione dati, rimuovere foto POD',
     cat:    ['Servizio', 'Reclamo Corriere', 'Foto POD viola privacy'],
     report: 'Non segnalare',
     esc:    '',
@@ -856,7 +856,7 @@ window.NODES_IT = {
 
   R_need_claim: {
     t: 'r',
-    script: '引导联系上游客户处理售后（前期已核实符合Risarcimento）',
+    script: 'Contattare il mittente per post-vendita (risarcimento gia verificato)',
     cat:    ['Richieste', 'Risarcimento', ''],
     report: 'Non segnalare',
     esc:    '',
@@ -909,7 +909,7 @@ window.NODES_IT = {
     ref:    'Class. Sicurezza - Recupero'
   },
 
-  // Sicurezza-Smarrimento-Pacco Errato Ricevuto（面单信息Non corrispondono，别人包裹）
+  // Sicurezza-Smarrimento-Pacco Errato Ricevuto (dati etichetta errati)
   R_wrong_pkg: {
     t: 'r',
     script: 'Indagine in corso, attendere（Consegnato Non Ricevutoreclamo）',
@@ -920,7 +920,7 @@ window.NODES_IT = {
     ref:    'Class. Sicurezza - Pacco Errato Ricevuto'
   },
 
-  // Servizio-Reclamo Corriere-暴力投递-其他财产损坏
+  // Servizio-Reclamo Corriere-Consegna Violenta-Danni a Proprieta
   R_srv_v_prop: {
     t: 'r',
     script: 'Rassicura -> segnala',
