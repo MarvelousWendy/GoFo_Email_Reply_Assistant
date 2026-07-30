@@ -406,12 +406,12 @@ window.NODES_IT = {
 
   R_failwrong: {
     t: 'r',
-    script: 'Consegna fallita (assente)',
-    cat:    ['Servizio', 'Reclamo Corriere', 'Mancata consegna: motivo errato'],
+    script: 'Consegna fallita (destinatario presente)',
+    cat:    ['Servizio', 'Reclamo Corriere', 'Motivo Errato'],
     report: 'Non segnalare',
     esc:    '',
-    note:   'Consegna fallita ma presente -> Scuse + consegna rapida.',
-    ref:    'SOP 2.1 Caso 2(Speciale)/ Class. Servizio - Motivo Errato'
+    note:   'Consegna fallita ma destinatario presente → Scuse, richiamo norme, consegna rapida.',
+    ref:    'SOP 2.1 Caso 2 (Speciale) / Class. Servizio - Motivo Errato'
   },
 
   R_stall714: {
@@ -591,12 +591,12 @@ window.NODES_IT = {
   R_dmg_nr: {
     t: 'r',
     script: 'Pacco danneggiato (reso al cliente confermato in piattaforma)',
-    cat:    ['Sicurezza', 'Danni', 'Non Ricev.-Danno'],
+    cat:    ['Tempistiche', 'Sollecito', 'Sollecito (Danno non Ricevuto)'],
     report: 'Non segnalare',
     esc:    '',
     evidence: 'Basato su valutazione danno in piattaforma, confermare reso al cliente.',
     note:   'Non ricevuto, danno in piattaforma → Confermare reso al cliente.',
-    ref:    'SOP 2.4 / Class. Sicurezza - Danni'
+    ref:    'SOP 2.4 / Class. Tempistiche - Sollecito'
   },
 
   R_dmg_ook: {

@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: 'Nunito';
-  src: url('../static/Nunito-Medium.ttf') format('truetype');
+  src: url('../fonts/Nunito-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
