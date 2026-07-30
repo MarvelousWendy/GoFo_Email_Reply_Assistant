@@ -152,6 +152,3 @@ Created by **[Wendy](https://github.com/MarvelousWendy)** 🧑🏼‍💻
 ---
 
 > ⚠️ **Disclaimer**: This tool provides decision support based on the SOP and Classification Table. **Every case must be evaluated individually.** The tool does not replace human judgment.
-```
-
----
