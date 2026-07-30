@@ -3,7 +3,6 @@
 > **Email Reply Decision Assistant** — a guided decision-tree tool for GOFO customer service email operations.  
 > Available in **Chinese (中文)** and **Italian (Italiano)**.
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Made with ❤️](https://img.shields.io/badge/made%20by-Wendy-ff69b4.svg)](https://github.com/MarvelousWendy)
 
 ---
