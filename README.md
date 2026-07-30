@@ -1,4 +1,4 @@
-# 📧 邮件回复决策助手 · GOFO 电邮服务组
+# 📧 邮件回复决策助手 · GOFO 客服服务部
 
 > **Email Reply Decision Assistant** — a guided decision-tree tool for GOFO customer service email operations.  
 > Available in **Chinese (中文)** and **Italian (Italiano)**.
