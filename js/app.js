@@ -29,8 +29,8 @@
     headerTitle:             { zh: '📧 邮件回复决策助手',               it: '📧 Assistente Decisionale Email' },
     headerSub:               { zh: 'GOFO 电邮服务组 · 依据《邮件回复操作流程 SOP》+《进线分类表》生成判断建议',
                                it: 'GOFO Servizio Posta Elettronica · Basato su SOP e Tabella di Classificazione' },
-    prioLabel:               { zh: '场景优先级：<b>安全类 </b>&gt; 服务类 &gt; 时效类 &gt; 需求类 &gt; 其他类',
-                               it: 'Priorità scenario:&ensp;<b>Sicurezza</b>&ensp;&gt;&ensp;Servizio&ensp;&gt;&ensp;Tempistiche&ensp;&gt;&ensp;Richieste&ensp;&gt;&ensp;Altro'},
+    prioLabel:               { zh: '场景优先级：<span class="priority-safe">安全类</span> &gt; 服务类 &gt; 时效类 &gt; 需求类 &gt; 其他类',
+                               it: 'Priorità scenario:&ensp;<span class="priority-safe">Sicurezza</span>&ensp;&gt;&ensp;Servizio&ensp;&gt;&ensp;Tempistiche&ensp;&gt;&ensp;Richieste&ensp;&gt;&ensp;Altro'},
     hintText:                { zh: '💡 <b>用法</b>：先在 Udesk 打开邮件、在 CPS 查好运单轨迹，再按顺序回答问题。每一步选完自动推进，右下角会实时给出「回复话术 / 登记类别 / 是否上报 / 是否升级」。本工具只做辅助判断，<b style="color:#E73F1E;">具体情形仍须具体分析</b>。',
                                it: '💡 <b>Uso</b>: aprire l\'email in Udesk, verificare il tracking in CPS, quindi rispondere alle domande in ordine. Ogni risposta fa avanzare automaticamente. In basso a destra apparirà il «Template Risposta / Categoria / Segnalazione / Escalation». Questo strumento è solo di supporto, <b style="color:#E73F1E;">ogni caso va valutato singolarmente</b>.' },
 
